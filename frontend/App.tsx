@@ -215,8 +215,8 @@ const App: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [currUser, setCurrUser] = useState<string>("");
   // const [host, setHost] = useState<string | null>(null);
-  const host = "127.0.0.1:8001";
-  const apiHost = "127.0.0.1:3000";
+  const host = "monauth.wmmp.xyz";
+  const apiHost = "monapi.wmmp.xyz";
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   // useEffect(() => {
