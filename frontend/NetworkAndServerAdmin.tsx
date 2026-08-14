@@ -32,7 +32,7 @@ export default function NetworkAndServerAdmin({
 
     try {
       const response = await fetch(
-        "http://" + host + "/admin/set-mesh-settings",
+        "https://" + host + "/admin/set-mesh-settings",
         {
           method: "POST",
           headers: {
@@ -63,7 +63,7 @@ export default function NetworkAndServerAdmin({
 
     try {
       const response = await fetch(
-        "http://" + host + "/admin/set-server-settings",
+        "https://" + host + "/admin/set-server-settings",
         {
           method: "POST",
           headers: {
@@ -83,7 +83,7 @@ export default function NetworkAndServerAdmin({
   };
 
   useEffect(() => {
-    fetch("http://" + host + "/get-mesh-settings")
+    fetch("https://" + host + "/get-mesh-settings")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -99,7 +99,7 @@ export default function NetworkAndServerAdmin({
         console.error("Error fetching mesh settings");
       });
 
-    fetch("http://" + host + "/get-server-settings")
+    fetch("https://" + host + "/get-server-settings")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

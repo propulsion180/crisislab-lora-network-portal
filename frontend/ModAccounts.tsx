@@ -26,7 +26,7 @@ export default function ModAccounts({
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://" + host + "/users");
+        const response = await fetch("https://" + host + "/users");
         if (!response.ok) {
           throw new Error("Failed to fetch users");
         }
@@ -43,7 +43,7 @@ export default function ModAccounts({
   const handleRemove = async (user: string) => {
     try {
       let tkn = localStorage.getItem("token");
-      const response = await fetch("http://" + host + "/remove_user", {
+      const response = await fetch("https://" + host + "/remove_user", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

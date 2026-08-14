@@ -18,7 +18,7 @@ export default function AddUser({ currUser, host }: AddUserProps) {
 
     try {
       let tok = localStorage.getItem("token");
-      const response = await fetch("http://" + host + "/add_user", {
+      const response = await fetch("https://" + host + "/add_user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

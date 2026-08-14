@@ -229,7 +229,7 @@ const App: React.FC = () => {
 
     try {
       console.log(currUser);
-      const response = await fetch("http://" + host + "/logout", {
+      const response = await fetch("https://" + host + "/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -267,7 +267,7 @@ const App: React.FC = () => {
   const updateRoutes = async (event) => {
     event.preventDefault();
     console.log("sending update routes request");
-    fetch("http://" + apiHost + "/admin/update-routes")
+    fetch("https://" + apiHost + "/admin/update-routes")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -311,7 +311,7 @@ const App: React.FC = () => {
   }, [nodes]);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://" + apiHost + "/telemetry/socket");
+    const ws = new WebSocket("wss://" + apiHost + "/telemetry/socket");
     ws.onmessage = (event) => {
       try {
         console.log(event.data);

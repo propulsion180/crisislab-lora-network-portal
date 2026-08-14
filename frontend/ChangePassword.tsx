@@ -24,7 +24,7 @@ export default function ChangePassword({
 
     try {
       let tkn = localStorage.getItem("token");
-      const response = await fetch("http://" + host + "/resetpassword", {
+      const response = await fetch("https://" + host + "/resetpassword", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
